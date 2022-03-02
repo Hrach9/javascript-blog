@@ -3,13 +3,31 @@
 function titleClickHandler(event) {
     console.log('Link was clicked!');
 
-    /* remove class 'active' from all article links  */
+    event.preventDefault(); //wyłączenie domyślnego zachowania przeglądarki przy kliknięciu w linki
 
-    /* add class 'active' to the clicked link */
+    /* [DONE] remove class 'active' from all article links  */
+    const activeLinks = document.querySelectorAll('.titles a.active'); //znaleźć wszystkie linki z klasą active,
 
-    /* remove class 'active' from all articles */
+    for (let activeLink of activeLinks) { //zastosować pętlę, aby dla każdego z nich:
+        activeLink.classList.remove('active'); // usunąć klasę active.
+    }
+
+    /* [IN PROGRTES] add class 'active' to the clicked link */
+
+    console.log('clickedElement:', clickedElement);
+    const activeLink = document.querySelectorAll('.titles a');
+    activeLink.classList.add('active'); // dodajemy klasę active.
+
+
+    /* [DONE] remove class 'active' from all articles */
+    const activeArticles = document.querySelectorAll('.article a');
+
+    for (let activeArticle of activeArticles) { //zastosować pętlę, aby dla każdego z nich:
+        activeArticle.classList.remove('active'); // usunąć klasę active. 
+    }
 
     /* get 'href' attribute from the clicked link */
+    const articleSelector = document.querySelectorAll()
 
     /* find the correct article using the selector (value of 'href' attribute) */
 
