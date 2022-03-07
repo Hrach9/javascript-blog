@@ -13,25 +13,26 @@ function titleClickHandler(event) {
     }
 
     /* [IN PROGRTES] add class 'active' to the clicked link */
-
+    const clickedElement = this; //Dzięki temu w całej funkcji będziemy mogli używać clickedElement, bez zastanawiania się, co w tym miejscu oznacza this.
     console.log('clickedElement:', clickedElement);
-    const activeLink = document.querySelectorAll('.titles a');
-    activeLink.classList.add('active'); // dodajemy klasę active.
+    clickedElement.add('active'); // dodajemy klasę active.
 
 
     /* [DONE] remove class 'active' from all articles */
-    const activeArticles = document.querySelectorAll('.article a');
+    const activeArticles = document.querySelectorAll('article.post.active');
 
     for (let activeArticle of activeArticles) { //zastosować pętlę, aby dla każdego z nich:
         activeArticle.classList.remove('active'); // usunąć klasę active. 
     }
 
     /* get 'href' attribute from the clicked link */
-    const articleSelector = document.querySelectorAll()
+    const articleSelector = clickedElement.getAttribute("href"); // Zadeklarujemy nową stałą o nazwie articleSelector i Znajdziemy teraz jego atrybut href
 
     /* find the correct article using the selector (value of 'href' attribute) */
+    const targetArticle = document.querySelector(articleSelector);
 
     /* add class 'active' to the correct article */
+    targetArticle.add('active'); // dodajemy klasę active na poprawny artykuł
 }
 
 const links = document.querySelectorAll('.titles a');
