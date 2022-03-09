@@ -12,10 +12,10 @@ function titleClickHandler(event) {
         activeLink.classList.remove('active'); // usunąć klasę active.
     }
 
-    /* [IN PROGRTES] add class 'active' to the clicked link */
+    /* [DONE] add class 'active' to the clicked link */
     const clickedElement = this; //Dzięki temu w całej funkcji będziemy mogli używać clickedElement, bez zastanawiania się, co w tym miejscu oznacza this.
     console.log('clickedElement:', clickedElement);
-    clickedElement.add('active'); // dodajemy klasę active.
+    clickedElement.classList.add('active'); // dodajemy klasę active.
 
 
     /* [DONE] remove class 'active' from all articles */
@@ -25,18 +25,42 @@ function titleClickHandler(event) {
         activeArticle.classList.remove('active'); // usunąć klasę active. 
     }
 
-    /* get 'href' attribute from the clicked link */
+    /* [DONE] get 'href' attribute from the clicked link */
     const articleSelector = clickedElement.getAttribute("href"); // Zadeklarujemy nową stałą o nazwie articleSelector i Znajdziemy teraz jego atrybut href
 
-    /* find the correct article using the selector (value of 'href' attribute) */
+    /* [DONE] find the correct article using the selector (value of 'href' attribute) */
     const targetArticle = document.querySelector(articleSelector);
 
-    /* add class 'active' to the correct article */
-    targetArticle.add('active'); // dodajemy klasę active na poprawny artykuł
+    /* [DONE] add class 'active' to the correct article */
+    targetArticle.classList.add('active'); // dodajemy klasę active na poprawny artykuł
 }
 
 const links = document.querySelectorAll('.titles a');
 
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
+}
+
+//---------
+
+const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+function generateTitleLinks() {
+
+    /* remove contents of titleList - Usunięcie zawartości listy linków:*/
+
+    /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
 }
