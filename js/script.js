@@ -67,9 +67,9 @@ function generateTitleLinks() {
 
 
         if (interation === 1) {
-            linkHTML += `< li > < a href = "#${articleId}" class = "active"><span> ${articleTitle} </span></a></li>`;
+            linkHTML += `<li> <a href = "#${articleId}" class = "active"><span> ${articleTitle} </span></a></li>`;
         } else {
-            linkHTML += `< li > < a href = "#${articleId}"><span> ${ articleTitle } </span></a></li>`;
+            linkHTML += `<li> <a href = "#${articleId}"><span> ${ articleTitle } </span></a></li>`;
         }
         interation++;
         /* insert link into html variable */
