@@ -46,30 +46,37 @@ const optArticleSelector = '.post',
 function generateTitleLinks() {
 
     /* remove contents of titleList - Usunięcie zawartości listy linków:*/
-    const titleList = document.querySelector(optTitleListSelector);
+    const titleList = document.querySelector(optTitleListSelector) //.innerHTML = '';
 
-    /* for each article */
     const articles = document.querySelectorAll(optArticleSelector);
     let linkHTML = "";
 
+    /* for each article */
+
     let interation = 1;
+
     for (let article of articles) {
         /* get the article id */
-        const id = article.getAttribute("id"); //odczytujemy atrybuty elementu - Zadeklarowaliśmy nową stałą o nazwie id i przypisz jej wartość argumentu id
+        const articleId = article.getAttribute("id"); //odczytujemy atrybuty elementu - Zadeklarowaliśmy nową stałą o nazwie id i przypisz jej wartość argumentu id
 
         /* find the title element */
-        const articleTitle = article.querySelector(optTitleSelector).innerHTML; //odnalezienia elementu oraz odczytania jego zawartości.
+        const articleTitle = article.querySelector(optTitleSelector).innerText; //odnalezienia elementu oraz odczytania jego zawartości.
 
         /* create HTML of the link */
+        // const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+
 
         if (interation === 1) {
-            linkHTML += `< li > < a href = "#${id}" class = "active"><span> ${title} </span></a></li>`;
+            linkHTML += `< li > < a href = "#${articleId}" class = "active"><span> ${articleTitle} </span></a></li>`;
         } else {
-            linkHTML += `< li > < a href = "#${id}"><span> ${ title } </span></a></li>`;
+            linkHTML += `< li > < a href = "#${articleId}"><span> ${ articleTitle } </span></a></li>`;
         }
         interation++;
+        /* insert link into html variable */
+        //titleList.innerHTML = titleList.innerHTML + linkHTML;
+
     }
-    /* insert link into titleList */
+
     titleList.innerHTML = linkHTML;
 
 
